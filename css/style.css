@@ -5,6 +5,8 @@ body {
   background-color: #191919;
 }
 
+/* Layer over the body to push footer to bottom */
+
 .body {
   background-color: transparent;
   min-height: calc(100vh - 40px);
@@ -24,11 +26,6 @@ body {
 img[src*="seriesc"] {
   width: 250px;
 }
-
-/* img[src*="data"] {
-  position: relative;
-  top: auto;
-} */
 
 .form {
  text-align: center;
