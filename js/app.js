@@ -21,10 +21,15 @@ function AJAXRequest() {
   xhr.onload = function() {
     if (xhr.status === 200) {
       let response = JSON.parse(xhr.responseText);
+      console.log(response);
       for ( let i = 0; i < 10; i++) {
         let gifDiv = document.createElement('div');
-        gifDiv.innerHTML = '<img src="' + response.data[i].images.fixed_height.url + '">';
+        gifDiv.innerHTML = `<img src="${response.data[i].images.fixed_height.url}"
+        data-still="${response.data[i].images.fixed_height_still.url}"
+        data-animate="${response.data[i].images.fixed_height.url}"
+        state="animate" title="Rating: ${response.data[i].rating}">`;
         contentSection.appendChild(gifDiv);
+        console.log(gifDiv);
       }
     }
   }
@@ -32,6 +37,8 @@ function AJAXRequest() {
   xhr.send();
 }
 
+
+// LISTENERS -------------------------------------------------------------
 // Runs request for searched items and stores previous searches in footer
 
 form.addEventListener('submit', (event) => {
@@ -58,6 +65,17 @@ clearResults.addEventListener('click', () => {
 // Listens for when buttons in footer are clicked, to trigger another ajax call
 
 document.addEventListener('click', (event) => {
+  let clickState = event.target.getAttribute("state");
+  let animateURL = event.target.getAttribute("data-animate");
+  let stillURL = event.target.getAttribute("data-still");
+  if (clickState == 'animate') {
+    event.target.setAttribute("src", stillURL);
+    event.target.setAttribute("state", 'still');
+  }
+  else if (clickState == 'still') {
+    event.target.setAttribute("src", animateURL);
+    event.target.setAttribute("state", 'animate');
+  }
   if (event.target.className === 'searches') {
     let recentButton = event.target.textContent;
     value = recentButton;
