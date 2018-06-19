@@ -12,7 +12,7 @@ let value = '';
 // AJAX REQUEST & CONTENT CREATION -------------------------
 
 function AJAXRequest() {
-  let queryURL = "https://api.giphy.com/v1/gifs/search?q=" + value + "&api_key=7a98wwVKTQiz7dJXtoAVn8dg06BmFNvA&limit=10";
+  let queryURL = `https://api.giphy.com/v1/gifs/search?q=${value}&api_key=7a98wwVKTQiz7dJXtoAVn8dg06BmFNvA&limit=10`;
   // INITIALIZE AJAX REQUEST
   let xhr = new XMLHttpRequest();
   // OPEN AJAX REQUEST
@@ -63,6 +63,7 @@ clearResults.addEventListener('click', () => {
 });
 
 // Listens for when buttons in footer are clicked, to trigger another ajax call
+// Also listening for when an animated gif is clicked, to make it still
 
 document.addEventListener('click', (event) => {
   let clickState = event.target.getAttribute("state");
