@@ -65,11 +65,13 @@ label {
 }
 
 #submit_button:hover,
-#clearResults:hover {
+#clearResults:hover,
+.searches:hover {
   background-color: #02bceb;
   transition-property: background-color;
   transition-duration: 0.3s;
   cursor: pointer;
+  color: #fff;
 }
 
 .container {
