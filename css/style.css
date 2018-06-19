@@ -25,23 +25,28 @@ img[src*="seriesc"] {
   width: 250px;
 }
 
+/* img[src*="data"] {
+  position: relative;
+  top: auto;
+} */
+
 .form {
  text-align: center;
  margin: 5px auto;
- width: 400px;
+ width: 500px;
  max-height: 100px;
  margin-bottom: 50px;
- padding-top: 30px;
- padding-bottom: 10px;
+ padding-top: 40px;
+ padding-bottom: 20px;
  background-color: #fdf566;
  border-radius: 10px;
 }
 
-input {
+input[name="search"] {
   border: none;
-  width: 300px;
+  width: 350px;
   margin-bottom: 5px;
-  height: 25px;
+  height: 35px;
   border-radius: 5px;
 }
 
@@ -49,7 +54,7 @@ label {
   display: none;
 }
 
-#search_button,
+#submit_button,
 #clearResults {
   border: none;
   padding: 10px;
@@ -59,6 +64,7 @@ label {
   color: #fff;
   border-radius: 5px;
   font-family: 'Fredoka One';
+  font-size: 1.2em;
 }
 
 .container {
@@ -67,12 +73,12 @@ label {
   grid-template-rows: 250px;
   grid-gap: 5px;
   grid-auto-rows: minmax(250px, 250px);
-  background-color: black;
+  background-color: #191919;
   padding: 5px;
 }
 
 div {
-  background-color: #e4e4e4;
+  background-color: #191919;
 }
 
 .footer {
