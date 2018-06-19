@@ -64,6 +64,11 @@ label {
   font-size: 1.2em;
 }
 
+#submit_button:hover,
+#clearResults:hover {
+  background-color: #02bceb;
+}
+
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
