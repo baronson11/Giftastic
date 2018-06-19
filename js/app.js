@@ -3,7 +3,6 @@
 const form = document.getElementById('form');
 const contentSection = document.querySelector('.container');
 const footerSection = document.querySelector('.footer');
-const contentChildren = contentSection.children;
 const clearResults = document.getElementById('clearResults');
 
 // Globals -------------------------------------------------
@@ -22,7 +21,6 @@ function AJAXRequest() {
   xhr.onload = function() {
     if (xhr.status === 200) {
       let response = JSON.parse(xhr.responseText);
-      console.log(response);
       for ( let i = 0; i < 10; i++) {
         let gifDiv = document.createElement('div');
         gifDiv.innerHTML = '<img src="' + response.data[i].images.fixed_height.url + '">';
@@ -52,10 +50,8 @@ form.addEventListener('submit', (event) => {
 // Clear results button to remove all results from Page
 
 clearResults.addEventListener('click', () => {
-  console.log('button works!');
-  // for loop not functional
-  for (let i = 0; i < contentChildren.length; i++) {
-    contentSection.removeChild(contentChildren);
+  while (contentSection.firstElementChild) {
+    contentSection.removeChild(contentSection.firstElementChild);
   }
 });
 
