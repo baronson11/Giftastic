@@ -1,25 +1,18 @@
 // Selectors ----------------------------------------------
 
 const form = document.getElementById('form');
-const box1= document.querySelector('.box-1');
 const contentSection = document.querySelector('.container');
 const footerSection = document.querySelector('.footer');
 const contentChildren = contentSection.children;
 const clearResults = document.getElementById('clearResults');
 
+// Globals -------------------------------------------------
+
+let value = '';
+
 // AJAX REQUEST & CONTENT CREATION -------------------------
 
-form.addEventListener('submit', (event) => {
-  event.preventDefault();
-  // capture text and store in value variable
-  let value = document.getElementById('search').value;
-  console.log(value);
-  // create and append recent searches to footer
-  let button = document.createElement('button');
-  button.className = 'searches';
-  button.textContent = value;
-  footerSection.appendChild(button);
-  // .../end button create & append
+function AJAXRequest() {
   let queryURL = "https://api.giphy.com/v1/gifs/search?q=" + value + "&api_key=7a98wwVKTQiz7dJXtoAVn8dg06BmFNvA&limit=10";
   // INITIALIZE AJAX REQUEST
   let xhr = new XMLHttpRequest();
@@ -39,7 +32,24 @@ form.addEventListener('submit', (event) => {
   }
   //SEND AJAX REQUEST
   xhr.send();
+}
+
+// Runs request for searched items and stores previous searches in footer
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  // capture text and store in value variable
+  value = document.getElementById('search').value;
+  // create and append recent searches to footer
+  let button = document.createElement('button');
+  button.className = 'searches';
+  button.textContent = value;
+  footerSection.appendChild(button);
+  // .../end button create & append
+  AJAXRequest();
 });
+
+// Clear results button to remove all results from Page
 
 clearResults.addEventListener('click', () => {
   console.log('button works!');
@@ -49,8 +59,12 @@ clearResults.addEventListener('click', () => {
   }
 });
 
+// Listens for when buttons in footer are clicked, to trigger another ajax call
+
 document.addEventListener('click', (event) => {
   if (event.target.className === 'searches') {
-    console.log('buttons in footer work');
+    let recentButton = event.target.textContent;
+    value = recentButton;
+    AJAXRequest();
   }
 });
