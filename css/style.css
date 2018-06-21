@@ -64,6 +64,18 @@ label {
   font-size: 1.2em;
 }
 
+.searches {
+  border: none;
+  padding: 10px;
+  display: inline-block;
+  margin: 5px;
+  background-color: #00ff9b;
+  color: #191919;
+  border-radius: 5px;
+  font-family: 'Fredoka One';
+}
+
+
 #submit_button:hover,
 #clearResults:hover,
 .searches:hover {
@@ -99,15 +111,4 @@ span {
   text-align: center;
   padding: 10px 0;
   font-size: 1.5em;
-}
-
-.searches {
-  border: none;
-  padding: 10px;
-  display: inline-block;
-  margin: 5px;
-  background-color: #00ff9b;
-  color: #191919;
-  border-radius: 5px;
-  font-family: 'Fredoka One';
 }

@@ -8,11 +8,12 @@ const clearResults = document.getElementById('clearResults');
 // Globals -------------------------------------------------
 
 let value = '';
+const apiKey = '';
 
 // AJAX REQUEST & CONTENT CREATION -------------------------
 
 function AJAXRequest() {
-  let queryURL = `https://api.giphy.com/v1/gifs/search?q=${value}&api_key=7a98wwVKTQiz7dJXtoAVn8dg06BmFNvA&limit=10`;
+  let queryURL = `https://api.giphy.com/v1/gifs/search?q=${value}&api_key=${apiKey}&limit=10`;
   // INITIALIZE AJAX REQUEST
   let xhr = new XMLHttpRequest();
   // OPEN AJAX REQUEST
