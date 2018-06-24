@@ -8,7 +8,7 @@ const clearResults = document.getElementById('clearResults');
 // Globals -------------------------------------------------
 
 let value = '';
-const apiKey = '';
+const apiKey = '7a98wwVKTQiz7dJXtoAVn8dg06BmFNvA';
 
 // AJAX REQUEST & CONTENT CREATION -------------------------
 
@@ -23,7 +23,7 @@ function AJAXRequest() {
     if (xhr.status === 200) {
       let response = JSON.parse(xhr.responseText);
       console.log(response);
-      for ( let i = 0; i < 10; i++) {
+      for (let i = 0; i < 10; i++) {
         let gifDiv = document.createElement('div');
         gifDiv.innerHTML = `<img src="${response.data[i].images.fixed_height.url}"
         data-still="${response.data[i].images.fixed_height_still.url}"
@@ -37,7 +37,6 @@ function AJAXRequest() {
   //SEND AJAX REQUEST
   xhr.send();
 }
-
 
 // LISTENERS -------------------------------------------------------------
 // Runs request for searched items and stores previous searches in footer
