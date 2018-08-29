@@ -13,8 +13,6 @@ function AJAXRequest(value) {
       search: value
   }
 
-  console.log(data)
-
   fetch(`/api/search`, {
       method: "POST",
       headers: {
@@ -27,7 +25,6 @@ function AJAXRequest(value) {
       return res.json();
     })
     .then((data) => {
-      console.log(data);
       let response = data;
         for (let i = 0; i < 10; i++) {
           let gifDiv = document.createElement('div');
