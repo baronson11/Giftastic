@@ -1,0 +1,26 @@
+{
+  "name": "Giftastic",
+  "version": "1.0.0",
+  "description": "A mini-giphy inspired front-end application",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smibbie/Giftastic.git"
+  },
+  "author": "Britney Aronson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smibbie/Giftastic/issues"
+  },
+  "homepage": "https://github.com/smibbie/Giftastic#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "giphy-api": "^1.2.7",
+    "path": "^0.12.7"
+  }
+}
