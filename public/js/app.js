@@ -33,7 +33,6 @@ function AJAXRequest(value) {
           data-animate="${response.data[i].images.fixed_height.url}"
           state="animate" title="Rating: ${response.data[i].rating}">`;
           contentSection.appendChild(gifDiv);
-          console.log(gifDiv);
         }
     })
     .catch(err => console.log(err));
